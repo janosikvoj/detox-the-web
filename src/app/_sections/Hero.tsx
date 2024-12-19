@@ -1,4 +1,5 @@
 'use client';
+import AnimateIn from '@/components/ui/animate-in';
 import { cn } from '@/lib/utils';
 import {
   Bug,
@@ -97,28 +98,31 @@ const Hero = () => {
             <Defect key={index} container={containerSize} />
           ))}
       </div>
-      <div className="relative container z-10 pointer-events-none">
-        <h1 className="scroll-m-20 text-4xl sm:text-6xl font-extrabold tracking-tight lg:text-8xl">
-          Is less more?
-          <br />
-          <span className="">Detox the Web.</span>
-        </h1>
-        <h1 className="absolute blur-xl -z-10 top-0 text-blue-200 text-4xl sm:text-6xl font-extrabold tracking-tight lg:text-8xl">
-          Is less more?
-          <br />
-          <span className="">Detox the Web.</span>
-        </h1>
-        <h1 className="absolute blur-2xl -z-10 top-0 text-blue-200 text-4xl sm:text-6xl font-extrabold tracking-tight lg:text-8xl">
-          Is less more?
-          <br />
-          <span className="">Detox the Web.</span>
-        </h1>
-        <h1 className="absolute blur-3xl -z-10 top-0 text-blue-200 text-4xl sm:text-6xl font-extrabold tracking-tight lg:text-8xl">
-          Is less more?
-          <br />
-          <span className="">Detox the Web.</span>
-        </h1>
-      </div>
+
+      <AnimateIn>
+        <div className="relative container z-10 pointer-events-none">
+          <h1 className="scroll-m-20 text-4xl sm:text-6xl font-extrabold tracking-tight lg:text-8xl">
+            Is less more?
+            <br />
+            <span className="">Detox the Web.</span>
+          </h1>
+          <h1 className="absolute blur-xl -z-10 top-0 text-blue-200 text-4xl sm:text-6xl font-extrabold tracking-tight lg:text-8xl">
+            Is less more?
+            <br />
+            <span className="">Detox the Web.</span>
+          </h1>
+          <h1 className="absolute blur-2xl -z-10 top-0 text-blue-200 text-4xl sm:text-6xl font-extrabold tracking-tight lg:text-8xl">
+            Is less more?
+            <br />
+            <span className="">Detox the Web.</span>
+          </h1>
+          <h1 className="absolute blur-3xl -z-10 top-0 text-blue-200 text-4xl sm:text-6xl font-extrabold tracking-tight lg:text-8xl">
+            Is less more?
+            <br />
+            <span className="">Detox the Web.</span>
+          </h1>
+        </div>
+      </AnimateIn>
       <div className="absolute w-full h-1/2 bottom-0 bg-gradient-to-b from-transparent to-blue-200/80 pointer-events-none" />
     </section>
   );
