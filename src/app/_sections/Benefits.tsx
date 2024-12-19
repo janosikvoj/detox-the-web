@@ -24,17 +24,23 @@ import {
 import { motion } from 'motion/react';
 import { useState } from 'react';
 
-const BenefitContent = ({ children }: { children: React.ReactNode }) => {
-  const [open, setOpen] = useState(false);
+const BenefitContent = ({
+  children,
+  isInitiallyOpen = false,
+}: {
+  children: React.ReactNode;
+  isInitiallyOpen?: boolean;
+}) => {
+  const [open, setOpen] = useState(isInitiallyOpen);
 
   return (
     <div className="relative">
-      <div className="sm:invisible">
+      <div className="visible sm:invisible">
         <p>{children}</p>
         <button className="hidden sm:block text-sm mt-2">Read more</button>
       </div>
       <motion.div
-        className="hidden sm:absolute top-0"
+        className="hidden sm:block absolute top-0"
         style={{ height: 'fit-content' }}
         layout
       >
@@ -97,7 +103,7 @@ const Benefits = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <BenefitContent>
+                <BenefitContent isInitiallyOpen>
                   Minimalist design reduces HTTP requests, minimizes file sizes,
                   and optimizes code, resulting in dramatically faster page load
                   times. This means less waiting for your users and a smoother,
@@ -206,7 +212,7 @@ const Benefits = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <BenefitContent>
+                <BenefitContent isInitiallyOpen>
                   Simpler codebases, fewer features, and less reliance on
                   complex plugins mean lower development costs, reduced
                   maintenance time, and fewer potential points of failure,
@@ -254,7 +260,7 @@ const Benefits = () => {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <BenefitContent>
+                <BenefitContent isInitiallyOpen>
                   Clean layouts, clear typography, and intuitive navigation
                   benefit all users, especially those with disabilities.
                   Minimalism promotes <strong>better accessibility </strong>by
