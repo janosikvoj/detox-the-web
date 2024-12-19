@@ -244,13 +244,15 @@ export default function Home() {
         <section key={section.title} className="py-8">
           <div className="container">
             <h3
-              className="scroll-m-20 text-2xl font-semibold tracking-tight"
+              className="scroll-m-20 text-2xl font-semibold tracking-tight mb-6"
               id={section.href.substring(1)}
             >
               {section.title}
             </h3>
           </div>
-          <div className="container bg-blue-200 h-64">Content</div>
+          <div className="container bg-slate-200 h-96 flex justify-center items-center animate-pulse">
+            Soon™
+          </div>
         </section>
       ))}
     </main>

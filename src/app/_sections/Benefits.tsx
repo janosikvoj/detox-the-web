@@ -29,12 +29,12 @@ const BenefitContent = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <div className="relative">
-      <div className="invisible">
+      <div className="sm:invisible">
         <p>{children}</p>
-        <button className="block text-sm mt-2">Read more</button>
+        <button className="hidden sm:block text-sm mt-2">Read more</button>
       </div>
       <motion.div
-        className="absolute top-0"
+        className="hidden sm:absolute top-0"
         style={{ height: 'fit-content' }}
         layout
       >
